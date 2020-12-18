@@ -18,7 +18,7 @@ public class InsertSort extends ISort {
 
     @Override
     public void timeCost(int[] source, boolean printSorted) {
-        System.out.print("插入排序: ");
+        System.out.print("insert sorting: ");
         super.timeCost(source, printSorted);
     }
 }

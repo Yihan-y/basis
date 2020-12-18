@@ -11,11 +11,11 @@ public class ISort {
 
 
     public void timeCost(int[] source,boolean printSorted) {
-        int[] arr= Arrays.copyOf(source,source.length);
-        long start= System.currentTimeMillis();
+        int[] arr=Arrays.copyOf(source,source.length);
+        long start=System.currentTimeMillis();
         sort(arr);
-        long end= System.currentTimeMillis();
-        System.out.println("运行时间: "+(end-start)+"ms");
+        long end=System.currentTimeMillis();
+        System.out.println("time cost: "+(end-start)+"ms");
         if(printSorted) {
             ArrayUtils.print(arr);
         }

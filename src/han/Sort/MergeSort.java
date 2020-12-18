@@ -10,7 +10,7 @@ public class MergeSort extends ISort {
 
     @Override
     public void timeCost(int[] source, boolean printSorted) {
-        System.out.print("归并排序: ");
+        System.out.print("merge sorting: ");
         super.timeCost(source, printSorted);
     }
 

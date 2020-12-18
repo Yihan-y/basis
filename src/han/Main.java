@@ -15,6 +15,7 @@ public class Main {
         SortFactory.getSortByType(SortType.SHELL).timeCost(arr,false);
         SortFactory.getSortByType(SortType.QUICK).timeCost(arr,false);
         SortFactory.getSortByType(SortType.MERGE).timeCost(arr,false);
-        SortFactory.getSortByType(SortType.HEAP).timeCost(arr,true);
+        SortFactory.getSortByType(SortType.HEAP).timeCost(arr,false);
+        SortFactory.getSortByType(SortType.BUCKET).timeCost(arr,true);
     }
 }

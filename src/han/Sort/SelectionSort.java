@@ -19,7 +19,7 @@ public class SelectionSort extends ISort {
 
     @Override
     public void timeCost(int[] arr, boolean printSorted) {
-        System.out.print("选择排序: ");
+        System.out.print("selection sorting: ");
         super.timeCost(arr, printSorted);
     }
 }

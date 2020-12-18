@@ -21,7 +21,7 @@ public class ShellSort extends ISort {
 
     @Override
     public void timeCost(int[] source, boolean printSorted) {
-        System.out.print("希尔排序: ");
+        System.out.print("shell sorting: ");
         super.timeCost(source, printSorted);
     }
 }

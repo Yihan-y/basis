@@ -22,4 +22,11 @@ public class ArrayUtils {
         arr[i]=arr[j];
         arr[j]=tmp;
     }
+
+    public static int[] append(int[] arr,int i) {
+        arr=arr==null?new int[0]:arr;
+        arr=Arrays.copyOf(arr,arr.length+1);
+        arr[arr.length-1]=i;
+        return arr;
+    }
 }

@@ -17,7 +17,7 @@ public class HeapSort extends ISort {
 
     @Override
     public void timeCost(int[] source, boolean printSorted) {
-        System.out.print("堆排序: ");
+        System.out.print("max heap sorting: ");
         super.timeCost(source, printSorted);
     }
 

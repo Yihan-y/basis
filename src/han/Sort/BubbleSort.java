@@ -23,7 +23,7 @@ public class BubbleSort extends ISort {
 
     @Override
     public void timeCost(int[] arr,boolean printSorted) {
-        System.out.print("冒泡排序: ");
+        System.out.print("bubble sorting: ");
         super.timeCost(arr,printSorted);
     }
 }

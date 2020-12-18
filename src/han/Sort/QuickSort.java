@@ -11,7 +11,7 @@ public class QuickSort extends ISort {
 
     @Override
     public void timeCost(int[] source, boolean printSorted) {
-        System.out.print("快速排序: ");
+        System.out.print("quick sorting: ");
         super.timeCost(source, printSorted);
     }
 
