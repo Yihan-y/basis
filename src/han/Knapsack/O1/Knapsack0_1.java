@@ -41,7 +41,7 @@ public class Knapsack0_1 implements Knapsack {
         for(int i=1;i<=N;i++) {
             int w=weights[i-1],v=values[i-1];
             for(int j=W;j>=w;j--) {
-                dp[j]=Math.max(dp[j-1],dp[j-w]+v);
+                dp[j]=Math.max(dp[j],dp[j-w]+v);
             }
         }
         return dp[W];
@@ -88,7 +88,7 @@ public class Knapsack0_1 implements Knapsack {
         for(int i=1;i<=len;i++) {
             int weight=nums[i-1];
             for(int j=target;j>=weight;j--) {
-                dp[j]=dp[j-1]||dp[j-weight];
+                dp[j]=dp[j]||dp[j-weight];
                 if(dp[target]) {
                     return true;
                 }
