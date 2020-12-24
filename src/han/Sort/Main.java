@@ -1,6 +1,5 @@
-package han;
+package han.Sort;
 
-import han.Sort.SortFactory;
 import han.Enum.SortType;
 import han.Utils.ArrayUtils;
 
