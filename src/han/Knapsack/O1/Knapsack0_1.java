@@ -157,5 +157,64 @@ public class Knapsack0_1 implements Knapsack {
         return dp[m][n];
     }
 
+    /*
+    * leetcode:494
+    * You are given a list of non-negative integers, a1, a2, ..., an, and a target, S.
+    * Now you have 2 symbols + and -.
+    * For each integer, you should choose one from + and - as its new symbol.
+    * Find out how many ways to assign symbols to make sum of integers equal to target S.
+    *
+    * Example 1:
+    * Input: nums is [1, 1, 1, 1, 1], S is 3.
+    * Output: 5
+    * Explanation:
+    * -1+1+1+1+1 = 3
+    * +1-1+1+1+1 = 3
+    * +1+1-1+1+1 = 3
+    * +1+1+1-1+1 = 3
+    * +1+1+1+1-1 = 3
+    * There are 5 ways to assign symbols to make the sum of nums be target 3.
+    * */
+    public int findTargetSumWays(int[] nums, int S) {
+        int len=nums.length,max=0;
+        for(int i:nums) {
+            max+=i;
+        }
+        if(S>max||S<-max) {
+            return 0;
+        }
+        // two-dimen
+        /*int sum=max*2+1;
+        int[][] dp=new int[len+1][sum];
+        dp[0][max]=1;
+        for(int i=1;i<=len;i++) {
+            int weight=nums[i-1];
+            for(int j=0;j<sum;j++) {
+                dp[i][j]=(j+weight<sum?dp[i-1][j+weight]:0)+(j-weight>=0?dp[i-1][j-weight]:0);
+            }
+        }
+        return dp[len][S+max];*/
+        // one-dimen
+        /*
+        * sum(p) represents sets with plus ahead while sum(m) represents minus ones
+        * s=sum(p)-sum(m)
+        * and max=sum(p)+sum(m)
+        * so sum(p)=(s+max)/2
+        * thus problem can be converted into 0-1 knapsack
+        * */
+        if((S+max)%2==1) {
+            return 0;
+        }
+        int p=(S+max)/2;
+        int[] dp=new int[p+1];
+        dp[0]=1;
+        for(int i=1;i<=len;i++) {
+            int weight=nums[i-1];
+            for (int j=p;j>=weight;j--) {
+                dp[j]+=dp[j-weight];
+            }
+        }
+        return dp[p];
+    }
 
 }
