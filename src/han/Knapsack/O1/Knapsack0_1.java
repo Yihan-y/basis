@@ -21,7 +21,7 @@ public class Knapsack0_1 implements Knapsack {
         int[][] dp=new int[N+1][W+1];
         for(int i=1;i<=N;i++) {
             int w=weights[i-1],v=values[i-1];
-            for(int j=1;j<=W;j++) {
+            for(int j=0;j<=W;j++) {
                 if(j>=w) {
                     dp[i][j]=Math.max(dp[i-1][j],dp[i-1][j-w]+v);
                 }else {
@@ -73,8 +73,8 @@ public class Knapsack0_1 implements Knapsack {
         dp[0][0]=true;
         for(int i=1;i<=len;i++) {
             int weight=nums[i-1];
-            for(int j=1;j<=target;j++) {
-                if(weight>=j) {
+            for(int j=0;j<=target;j++) {
+                if(j>=weight) {
                     dp[i][j]=dp[i-1][j]||dp[i-1][j-weight];
                 }else{
                     dp[i][j]=dp[i-1][j];
@@ -95,6 +95,66 @@ public class Knapsack0_1 implements Knapsack {
             }
         }
         return false;
+    }
+
+
+    /*
+    * leetcode:474
+    * You are given an array of binary strings strs and two integers m and n.
+    * Return the size of the largest subset of strs such that there are at most m 0's and n 1's in the subset.
+    * A set x is a subset of a set y if all elements of x are also elements of y.
+    *
+    * Example 1:
+    * Input: strs = ["10","0001","111001","1","0"], m = 5, n = 3
+    * Output: 4
+    * Explanation: The largest subset with at most 5 0's and 3 1's is {"10", "0001", "1", "0"}, so the answer is 4.
+    * Other valid but smaller subsets include {"0001", "1"} and {"10", "1", "0"}.
+    * {"111001"} is an invalid subset because it contains 4 1's, greater than the maximum of 3.
+    * */
+    public static int findMaxForm(String[] strs, int m, int n) {
+        int len=strs.length;
+        // two-dimen
+        /*int[][][] dp=new int[len+1][m+1][n+1];
+        for(int i=1;i<=len;i++) {
+            char[] chars=strs[i-1].toCharArray();
+            int zero=0,one=0;
+            for(char c:chars) {
+                if(c=='0'){
+                    zero++;
+                }else {
+                    one++;
+                }
+            }
+            for(int x=0;x<=m;x++) {
+                for(int y=0;y<=n;y++) {
+                    if(x>=zero&&y>=one) {
+                        dp[i][x][y]=Math.max(dp[i-1][x][y],dp[i-1][x-zero][y-one]+1);
+                    }else{
+                        dp[i][x][y]=dp[i-1][x][y];
+                    }
+                }
+            }
+        }
+        return dp[len][m][n];*/
+        // one-dimen
+        int[][] dp=new int[m+1][n+1];
+        for(int i=1;i<=len;i++) {
+            char[] chars=strs[i-1].toCharArray();
+            int zero=0,one=0;
+            for(char c:chars) {
+                if(c=='0') {
+                    zero++;
+                }else {
+                    one++;
+                }
+            }
+            for(int x=m;x>=zero;x--) {
+                for(int y=n;y>=one;y--) {
+                    dp[x][y]=Math.max(dp[x][y],dp[x-zero][y-one]+1);
+                }
+            }
+        }
+        return dp[m][n];
     }
 
 
