@@ -1,5 +1,7 @@
-package han.Sort;
+package han.Sort.ISort;
 
+
+import han.Sort.Factory.ISort;
 
 public class MergeSort extends ISort {
     @Override

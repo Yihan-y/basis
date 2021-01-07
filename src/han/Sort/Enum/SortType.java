@@ -1,4 +1,4 @@
-package han.Enum;
+package han.Sort.Enum;
 
 public enum SortType {
     BUBBLE,

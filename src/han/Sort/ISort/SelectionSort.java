@@ -1,6 +1,7 @@
-package han.Sort;
+package han.Sort.ISort;
 
-import han.Utils.ArrayUtils;
+import han.Sort.Factory.ISort;
+import han.Sort.Utils.ArrayUtils;
 
 public class SelectionSort extends ISort {
     @Override

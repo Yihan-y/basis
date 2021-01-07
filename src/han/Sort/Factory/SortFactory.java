@@ -1,6 +1,7 @@
-package han.Sort;
+package han.Sort.Factory;
 
-import han.Enum.SortType;
+import han.Sort.Enum.SortType;
+import han.Sort.ISort.*;
 
 public class SortFactory {
 

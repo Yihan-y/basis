@@ -1,7 +1,8 @@
 package han.Sort;
 
-import han.Enum.SortType;
-import han.Utils.ArrayUtils;
+import han.Sort.Enum.SortType;
+import han.Sort.Factory.SortFactory;
+import han.Sort.Utils.ArrayUtils;
 
 public class Main {
 

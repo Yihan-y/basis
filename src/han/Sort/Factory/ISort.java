@@ -1,6 +1,6 @@
-package han.Sort;
+package han.Sort.Factory;
 
-import han.Utils.ArrayUtils;
+import han.Sort.Utils.ArrayUtils;
 import java.util.Arrays;
 
 public class ISort {

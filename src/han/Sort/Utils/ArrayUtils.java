@@ -1,4 +1,4 @@
-package han.Utils;
+package han.Sort.Utils;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

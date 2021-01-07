@@ -1,10 +1,12 @@
-package han.Sort;
+package han.Sort.ISort;
 
-import han.Enum.SortType;
-import han.Utils.ArrayUtils;
+import han.Sort.Enum.SortType;
+import han.Sort.Factory.ISort;
+import han.Sort.Factory.SortFactory;
+import han.Sort.Utils.ArrayUtils;
 
 public class BucketSort extends ISort {
-    private final ISort inner=SortFactory.getSortByType(SortType.QUICK);
+    private final ISort inner= SortFactory.getSortByType(SortType.QUICK);
 
     @Override
     public int[] sort(int[] arr) {

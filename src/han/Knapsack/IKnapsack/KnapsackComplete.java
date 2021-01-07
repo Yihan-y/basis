@@ -1,4 +1,4 @@
-package han.Knapsack.Complete;
+package han.Knapsack.IKnapsack;
 
 import han.Knapsack.Knapsack;
 
